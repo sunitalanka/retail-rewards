@@ -67,7 +67,7 @@ public class HomeController {
                 totalRewards = totalRewards + rewards;
             }
             if (amount >= 50 && amount <= 100) {
-                rewards = (50 * 1);
+                rewards = (amount-50)* 1;
                 totalRewards = totalRewards + rewards;
             }
             tempRewards = tempRewards + rewards;
