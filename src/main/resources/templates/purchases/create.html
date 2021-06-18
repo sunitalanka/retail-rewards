@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body class = "container">
+<nav th:replace="fragments :: header"></nav>
+<p th:text="${errorMsg}" style="color:red;"></p>
+<form method="post">
+
+   <div class="form-group">
+    <label>Date
+        <input type="date" th:field ="${purchase.date}" class="form-control" />
+    </label>
+    <p class="error" th:errors="${purchase.date}"></p>
+  </div>
+  <div class="form-group">
+    <label>AmountSpent
+        <input type="text" th:field="${purchase.amountSpent}" class="form-control"/>
+    </label>
+    <p class="error" th:errors="${purchase.amountSpent}"></p>
+   </div>
+    <div class="form-group">
+        <label th:for="customer">Customer </label>
+        <select th:field="${purchase.customer}">
+            <option th:each="customer : ${customers}"
+                    th:text="${customer.name}"
+                    th:value="${customer.id}">
+            </option>
+        </select>
+        <p class="error" th:errors="${purchase.customer}"></p>
+
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-success" />
+    </div>
+
+</form>
+</body>
+</html>
