@@ -34,6 +34,7 @@
             <tr>
             <th th:each="entry : ${rewMap}">
                   <span th:for="${entry.key}" th:text="${entry.key}"></span>
+                 <th>Total Rewards:</th>
             </th>
             </tr>
             </thead>
@@ -41,11 +42,10 @@
             <tr>
                 <td th:each="entry : ${rewMap}">
                 <span th:text="${entry.value}" /></td>
+                <td><span th:text="${totalRewards}" /></td>
 
             </tr>
-            <tr colspan="3">
-                <th>Total Rewards:</th> <td><span th:text="${totalRewards}" /></td>
-            </tr>
+
         </table>
 
 
